@@ -18,4 +18,7 @@ Rotation config is created using `/app/logrotate.tmpl` docker-gen template and c
 
 # Example usage
 
-`docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker:/var/lib/docker michaloo/logrotate`
+```
+docker run -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker:/var/lib/docker -e GOCRON_SCHEDULER="0  0 * * * *" -e LOGROTATE_ROTATE=10 jmcarbo/logrotate
+```
+
